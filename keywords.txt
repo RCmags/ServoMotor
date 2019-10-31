@@ -1,0 +1,4 @@
+ServoMotor	KEYWORD1
+initialize	KEYWORD2
+readSensor	KEYWORD2
+setPosition	KEYWORD2
