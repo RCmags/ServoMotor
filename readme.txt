@@ -1,6 +1,6 @@
 ### Custom servo library 
 ### Author: XXXmags
-### Contact: memoryofatrufestival@gmail.com
+### Contact: https://www.rcgroups.com/forums/member.php?u=189488
 
 The purpose of this library is to create a custom servo motor. To use it you will need:
 
@@ -8,8 +8,8 @@ The purpose of this library is to create a custom servo motor. To use it you wil
 	- A DC motor that can be reversed by flipping the voltage across it.
 	- An analog sensor that can measure the position of the motor.
 		
-You will also need a single analog pin and two pins capable of pwm output.
-See this page to find out what pwm pins are available on your arduino board:
+You will also need a single analog pin and two pins capable of pwm output. See this page 
+to find out what pwm pins are available on your arduino board:
 
 	https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/
 	
@@ -23,8 +23,8 @@ Note that the library uses analogRead() to measure the sensor. As such, the enti
 of motion will be divided to 1024 individual steps. For a 180 degree rotation this means 
 a maximum precision of 180/1024 ~ 0.18 degrees.  
 
-The motion of the servo is controlled via a PID loop. The associated coefficients 
-are set when a sketch is compiled and cannot be changed once the arduino is running.  
+The motion of the servo is controlled via a PID loop. The associated coefficients are set 
+when a sketch is compiled and cannot be changed once the arduino is running.  
 
 Finally, credit goes to Pavel Holoborodko for the coefficients used to calculate the PID 
 derivatives. See this page for his work on noise robust differentiators:
