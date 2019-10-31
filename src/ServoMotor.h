@@ -1,3 +1,9 @@
+/*
+Arduino library to make a servo motor with an analog sensor, a DC motor, and an H-bridge. 
+Author: XXXmags
+Contact: https://www.rcgroups.com/forums/member.php?u=189488
+*/
+
 #ifndef ServoMotor_h
 
 #define ServoMotor_h
