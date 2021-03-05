@@ -1,7 +1,3 @@
-### Custom servo library 
-### Author: XXXmags
-### Contact: https://www.rcgroups.com/forums/member.php?u=189488
-
 The purpose of this library is to create a custom servo motor. To use it you will need:
 
 	- An H-bridge
@@ -31,8 +27,10 @@ derivatives. See this page for his work on noise robust differentiators:
 
 	http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/smooth-low-noise-differentiators/
 
-Finally, the public methods of the included class are:
+Finally, the methods of the class are:
 
     initialize(): sets the input and output pins and calibrates the servo.
     readSensor(): returns the unfiltered sensor signal.
     setPosition(int): sets the target position of the servo.
+    
+![picture](DIY_servo_schem.png)
