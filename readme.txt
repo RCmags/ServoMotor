@@ -32,5 +32,6 @@ Finally, the methods of the class are:
     initialize(): sets the input and output pins and calibrates the servo.
     readSensor(): returns the unfiltered sensor signal.
     setPosition(int): sets the target position of the servo.
-    
+
+
 ![picture](DIY_servo_schem.png)
