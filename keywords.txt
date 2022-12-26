@@ -1,4 +1,9 @@
+# library
 ServoMotor	KEYWORD1
+
+# functions
 initialize	KEYWORD2
 readSensor	KEYWORD2
 setPosition	KEYWORD2
+
+# NOTE: separate keywords with single tab 
