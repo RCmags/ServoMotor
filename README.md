@@ -32,3 +32,6 @@ a maximum precision of 180/1024 ~ 0.18 degrees.
 
 The motion of the servo is controlled via a PID loop. The associated coefficients are set 
 when a sketch is compiled and cannot be changed once the arduino is running.  
+
+# References
+The library uses an [alpha-beta filter](https://en.wikipedia.org/wiki/Alpha_beta_filter) to smoothen and differentiate the signal from the analog sensor.

@@ -48,7 +48,7 @@ class ServoMotor {
   private:
     //---- Variables ----
     uint32_t last_time; 
-	float 	 x[2], dx_dt, sxdt;
+    float    x[2], dx_dt, sxdt;
  
     //---- Functions ----
 

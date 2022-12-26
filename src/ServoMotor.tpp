@@ -14,10 +14,10 @@ void ServoMotor<TEMPLATE_INPUTS>::initialize( void ) {
   //Default values
   last_time = millis();
   
-  x[0] = 0;	    // set to zero error
+  x[0] = 0;     // set to zero error
   x[1] = x[0];
   
-  sxdt = 0;	    // assume zero initial conditions
+  sxdt = 0;     // assume zero initial conditions
   dx_dt = 0;
 }
 
@@ -44,14 +44,14 @@ void ServoMotor<TEMPLATE_INPUTS>::calculus(float input) {
     // velocity
   dx_dt += BETA * dx/dt;
 
-  	// store past position
+    // store past position
   x[1] = x[0];
   x[0] = xnew;
 
   // 2. trapezoidal integral:
   float xdt = 0.5 * ( x[0] + x[1] ) * dt;
   sxdt += (*GAIN_INT) * xdt;
-  sxdt = constrain(sxdt, -PWM_MAX, PWM_MAX);	
+  sxdt = constrain(sxdt, -PWM_MAX, PWM_MAX);    
 }
 
 //------------------ PID control --------------------- 
@@ -63,7 +63,7 @@ float ServoMotor<TEMPLATE_INPUTS>::PIDcontroller( int input ) {
   calculus(input); 
   float output;
   // sum terms
-  output = (*GAIN_PROP)*x[0] + sxdt + (*GAIN_DERIV)*dx_dt;	    
+  output = (*GAIN_PROP)*x[0] + sxdt + (*GAIN_DERIV)*dx_dt;      
   output = constrain( output, -PWM_MAX, PWM_MAX );
 
   return output; 
