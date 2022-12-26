@@ -9,11 +9,11 @@
 
 //-------- Default Low pass filter settings ---------- [ No characters after backlash! ]
 
-constexpr float DEFAULT_ALPHA          = 0.20;
+constexpr float DEFAULT_ALPHA          = 0.25;
 
 #define TEMPLATE_TYPE_DEFAULT_INPUTS                                                                                   \
           const float* ALPHA           = &DEFAULT_ALPHA,   /*  Filter decay rate - MUST be value from 0 to 255 */      \
-          uint8_t      SENSOR_DEADBAND = 4                 /*  Minimum error of PID proportional and integral  */  
+          uint8_t      SENSOR_DEADBAND = 2                 /*  Minimum error of PID proportional and integral  */  
 
 //--------------- Template Parameters ---------------- [ No characters after backlash! ]
           
@@ -46,9 +46,12 @@ template <TEMPLATE_TYPE_REQUIRED_INPUTS, TEMPLATE_TYPE_DEFAULT_INPUTS>
 class ServoMotor {
   
   private:
+    
     //---- Variables ----
-    uint32_t last_time; 
-	float 	 x[2], dx_dt, sxdt;
+    uint32_t    last_time; 
+    float       integral;
+	float 		x[2] = {0};
+	float 		v = 0;
  
     //---- Functions ----
 
@@ -56,16 +59,22 @@ class ServoMotor {
     void setDirection(int);
     static float deadband( float, float );
 
-    //Calculus functions of position error:
-    void calculus(float);
-    float PIDcontroller(int);
+    //Sensor signal:
+    void filterSensor(float);
+    
+    //Calculus functions of sensor signal:
+    float rectIntegral( float, float );
+    float pidOutput( int );
+    
+    float updateTimer();
 
  public:
+ 
     //Set pins and arrays
-    void initialize();
+    void initialize(void);
     
     //Servo control:
-    int readSensor();
+    int readSensor(void);
     void setPosition(int);
 
 }; 

@@ -32,9 +32,3 @@ a maximum precision of 180/1024 ~ 0.18 degrees.
 
 The motion of the servo is controlled via a PID loop. The associated coefficients are set 
 when a sketch is compiled and cannot be changed once the arduino is running.  
-
-# References
-Credit goes to Pavel Holoborodko for the coefficients used to calculate the PID 
-derivatives. See this page for his work:
-
-- [Noise robust differentiators](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/smooth-low-noise-differentiators/)
